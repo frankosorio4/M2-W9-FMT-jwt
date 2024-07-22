@@ -5,12 +5,14 @@ const LeitoresController = require('../controllers/LeitoresController')
 const InstrumentosController = require('../controllers/InstrumentosController')
 const AuditoriosController = require('../controllers/AuditoriosController')
 const UsuariosController = require('../controllers/UsuariosController')
+const LoginController = require('../controllers/LoginController')
 
 const routes = new Router()
 
 /* coloque  suas rotas aqui */
 
 routes.post('/usuarios', UsuariosController.criarConta)
+routes.post('/login', LoginController.login)
 
 routes.post('/livros',LivrosController.criar);
 routes.get('/livros',LivrosController.listaTodos);
