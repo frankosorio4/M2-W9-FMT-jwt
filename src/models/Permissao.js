@@ -3,7 +3,7 @@ const { DataTypes } = require('sequelize');
 const connection = require('../database/connection');
 
 // this model maps the responsaveis table into Permicao
-const Permicao = connection.define('permissoes', {
+const Permissao = connection.define('permissoes', {
     descricao: {
         allowNull: false,
         type: DataTypes.STRING(150)
@@ -12,4 +12,4 @@ const Permicao = connection.define('permissoes', {
     paranoid: true //  Habilita soft delete
 });
 
-module.exports = Permicao;
+module.exports = Permissao;

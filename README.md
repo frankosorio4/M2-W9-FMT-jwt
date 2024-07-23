@@ -26,11 +26,21 @@ Crie migration e model para uma tabela de permissão e se necessário uma tabela
 http://localhost:3000/permissoes/
 
 {
-    "descricao": "atribuir_permissao"
+    "descricao": "nome_permissao"
 }
+
+permissoes: 'listar', 'criar', 'deletar', 'atribuir_permissao', 'admin'
 
 Ex. 05 - Aplique o conceito de permissões para as rotas do sistema
 
 Criei um middleware para controlar permissões de rotas e aplique nas rotas do sistema.
 
 Fique à vontade para especificar quais permissões são necessárias para cada rota.
+
+http://localhost:3000/permissoes/atribuir
+
+{
+    "usuarioId": 2,
+    "permissaoId": 1
+}
+

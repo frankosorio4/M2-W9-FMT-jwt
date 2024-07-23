@@ -1,7 +1,7 @@
 const { DataTypes } = require('sequelize')
 const connection = require('../database/connection')
 
-const UsuarioPermissoes = connection.define('usuarioPermissoes', {
+const UsuarioPermissao = connection.define('usuario_permissoes', {
     usuarioId: {
         type: DataTypes.INTEGER,
         allowNull: false,
@@ -22,4 +22,4 @@ const UsuarioPermissoes = connection.define('usuarioPermissoes', {
     paranoid: true //  Habilita soft delete
 });
 
-module.exports = UsuarioPermissoes
+module.exports = UsuarioPermissao
