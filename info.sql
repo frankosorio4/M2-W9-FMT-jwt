@@ -1,3 +1,5 @@
+--excercicios semana 8
+
 -- Convite: https://classroom.github.com/a/lKlVql3R
 
 -- Aceite o convite e clone o repositório.

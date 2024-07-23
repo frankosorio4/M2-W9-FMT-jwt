@@ -7,6 +7,7 @@ const AuditoriosController = require('../controllers/AuditoriosController')
 const UsuariosController = require('../controllers/UsuariosController')
 const LoginController = require('../controllers/LoginController')
 const validaToken = require('../middleware/validaToken')
+const PermissoesController = require('../controllers/PermissoesController')
 
 const routes = new Router()
 
@@ -14,6 +15,9 @@ const routes = new Router()
 
 routes.post('/usuarios', UsuariosController.criarConta)
 routes.post('/login', LoginController.login)
+
+//another form to use validaToken
+//routes.use(validaToken)
 
 routes.post('/livros',validaToken, LivrosController.criar);
 routes.get('/livros',validaToken, LivrosController.listaTodos);
@@ -38,5 +42,10 @@ routes.get('/auditorios',validaToken, AuditoriosController.listaTodos);
 routes.get('/auditorios/:id',validaToken, AuditoriosController.listarUm);
 routes.put('/auditorios/:id',validaToken, AuditoriosController.atualizar);
 routes.delete('/auditorios/:id',validaToken, AuditoriosController.deletar);
+
+routes.post('/permissoes',validaToken ,PermissoesController.criar)
+routes.get('/permissoes',validaToken ,PermissoesController.listarTodos)
+routes.delete('/permissoes',validaToken ,PermissoesController.deletar)
+routes.post('/permissoes',validaToken ,PermissoesController.atribuirPermissao)
 
 module.exports = routes
